@@ -1,0 +1,37 @@
+body
+  background-color: #6bd0ff
+
+.deck
+  display: flex
+  flex-direction: column
+
+  .row
+    display: flex
+    flex-direction: row
+
+.card
+  .sides
+    position: relative
+
+  .sides, .front, .back
+    width: 80px
+    height: 80px
+
+  .front, .back
+    border: 10px solid white
+    position: absolute
+    top: 0
+    left: 0
+
+  .front
+    line-height: 80px
+    text-align: center
+    font-size: 3em
+    color: white
+    background-color: #dab4f8
+
+  .back
+    background-color: #be7cf4
+
+  &.revealed .back
+    display: none
