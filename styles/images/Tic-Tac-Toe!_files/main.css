@@ -1,0 +1,90 @@
+/* schoolyellow#ecd355 */
+/* skyblue#7ad9f0 */
+/* brightblue#000dff */
+/* transparenthsla(237, 100%, 50%, 0) */
+/*arbitrarygreen#74d355 */
+body {
+  background-color: white; }
+
+.backDrop {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.board {
+  padding: 20px;
+  border: solid 1px black;
+  background-image: url("images/woodgrain.jpg");
+  width: 478px;
+  height: 478px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column; }
+
+.row {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row; }
+
+.hollow {
+  background-color: #fff;
+  margin: 10px;
+  width: 136px;
+  height: 136px;
+  border: solid 1px black; }
+
+.block {
+  position: relative;
+  top: 8px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.block, .faceB, .faceX, .faceO {
+  width: 120px;
+  height: 120px; }
+
+.faceB, .faceX, .faceO {
+  position: absolute;
+  background-color: #ecd355;
+  border: 1px solid black;
+  top: 0;
+  left: 0;
+  line-height: 120px;
+  text-align: center;
+  font-size: 5em;
+  color: #000dff; }
+
+.faceB {
+  z-index: +1; }
+
+.faceX, .faceO {
+  z-index: 0; }
+
+.block.turnedBlank .faceB {
+  z-index: +1; }
+
+.block.turnedBlank .faceX {
+  z-index: 0; }
+
+.block.turnedBlank .faceO {
+  z-index: 0; }
+
+.block.turnedX .faceB {
+  z-index: 0; }
+
+.block.turnedX .faceX {
+  z-index: +1; }
+
+.block.turnedX .faceO {
+  z-index: 0; }
+
+.block.turnedO .faceB {
+  z-index: 0; }
+
+.block.turnedO .faceX {
+  z-index: 0; }
+
+.block.turnedO .faceO {
+  z-index: +1; }
