@@ -1,37 +1,160 @@
-body
-  background-color: #6bd0ff
+/* schoolyellow#ecd355
+/* brightblue#000dff
+/* transparenthsla(237, 100%, 50%, 0)
+/*arbitrarygreen#74d355
+/*  background-color: hsla(305, 28%, 20%, 0.85)
 
-.deck
+html
+  background-image: url("images/oceanHorizon.jpeg")
+  background-size: cover
+  font-family: Lobster
+
+.backDrop
+  width: 600px
+  margin-left: auto
+  margin-right: auto
+
+.header
+  color: #125b6e
+  width: 518px
+  margin-left: auto
+  margin-right: auto
+  text-align: center
+
+  h1
+    font-size: 3em
+
+.board
+  padding: 20px
+  border: solid 1px black
+  background-image: url("images/woodgrain.jpg")
+  width: 478px
+  height: 478px
+  margin-left: auto
+  margin-right: auto
   display: flex
   flex-direction: column
 
-  .row
-    display: flex
-    flex-direction: row
+.row
+  margin-left: auto
+  margin-right: auto
+  display: flex
+  flex-direction: row
 
-.card
-  .sides
-    position: relative
+.hollow
+  background-color: #fff
+  margin: 10px
+  width: 136px
+  height: 136px
+  border: solid 1px black
+  border-radius: 8px
 
-  .sides, .front, .back
-    width: 80px
-    height: 80px
+.block
+  position: relative
+  top: 8px
+  margin-left: auto
+  margin-right: auto
 
-  .front, .back
-    border: 10px solid white
-    position: absolute
-    top: 0
-    left: 0
+.block, .faceB, .faceX, .faceO
+  width: 120px
+  height: 120px
 
-  .front
-    line-height: 80px
-    text-align: center
-    font-size: 3em
-    color: white
-    background-color: #dab4f8
+.faceB, .faceX, .faceO
+  position: absolute
+  border: 1px solid black
+  border-radius: 8px
+  top: 0
+  left: 0
+  line-height: 120px
+  text-align: center
+  font-size: 5em
 
-  .back
-    background-color: #be7cf4
+.faceB
+  z-index: +1
+  background-color: #125b6e
 
-  &.revealed .back
-    display: none
+.faceX
+  color: #00308f
+
+.faceO
+  color: #8f0034
+
+.faceX, .faceO
+  z-index: 0
+  background-color: #ecd355
+
+.footer
+  position: fixed
+  color: #000
+  width: 100%
+  height: 40px
+  left: 0
+  bottom: 0
+  background-color: lightgray
+  text-align: left
+  line-height: 40px
+  padding: 0
+  font: Helvetica
+
+  p
+    position: fixed
+    left: 20px
+    margin: 0
+
+.statementContainer
+  display: flex
+  flex-direction: column
+  position: relative
+  left: 600px
+  bottom: 500px
+
+.winnerStatement1, .winnerStatement2, .tieGameStatement, .invalidMove
+  float: left
+  position: relative
+  color: lightgray
+
+  h2
+    display: inline-block
+    font-size: 2em
+    margin: 10px 0px
+
+  i
+    display: inline-block
+    font-size: 2em
+    padding-right: 10px
+
+.block
+  &.flippedB
+    .faceB
+      z-index: +1
+    .faceX
+      z-index: 0
+    .faceO
+      z-index: 0
+  &.flippedX
+    .faceB
+      z-index: 0
+    .faceX
+      z-index: +1
+    .faceO
+      z-index: 0
+  &.flippedO
+    .faceB
+      z-index: 0
+    .faceX
+      z-index: 0
+    .faceO
+      z-index: +1
+
+.winnerStatement1
+  &.anchorlight
+    color: #00308f
+.winnerStatement2
+  &.lifesaverlight
+    color: #8f0034
+.tieGameStatement
+  &.tielight
+    color: #000
+.invalidMove
+  &.invalidlight
+    color: #000

@@ -1,62 +1,97 @@
+//- Coder: Ryan Atkinson
 doctype html
+
+
 html(lang="en")
   head
-    title Memory
+    title Tic-Tac-Toe!
+    link(href="https://fonts.googleapis.com/css?family=Open+Sans|Lobster" rel="stylesheet" type="text/css")
     link(href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet")
     link(href="styles/main.css" rel="stylesheet")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js")
     script(src="scripts/main.js")
   body
-    .deck
-      .row
-        .card(data-pick="ie")
-          .sides
-            .front
-              i.fa.fa-internet-explorer
-            .back
-        .card(data-pick="firefox")
-          .sides
-            .front
-              i.fa.fa-firefox
-            .back
-        .card(data-pick="safari")
-          .sides
-            .front
-              i.fa.fa-safari
-            .back
-        .card(data-pick="chrome")
-          .sides
-            .front
-              i.fa.fa-chrome
-            .back
-        .card(data-pick="ie")
-          .sides
-            .front
-              i.fa.fa-internet-explorer
-            .back
-      .row
-        .card(data-pick="chrome")
-          .sides
-            .front
-              i.fa.fa-chrome
-            .back
-        .card(data-pick="safari")
-          .sides
-            .front
-              i.fa.fa-safari
-            .back
-        .card(data-pick="firefox")
-          .sides
-            .front
-              i.fa.fa-firefox
-            .back
-        .card(data-pick="opera")
-          .sides
-            .front
-              i.fa.fa-opera
-            .back
-        .card(data-pick="opera")
-          .sides
-            .front
-              i.fa.fa-opera
-            .back
+    .backDrop
+      .header
+        h1 Tic.Tac.Toe
+      .board
+        .row
+          .hollow
+            .block(data-position='0')
+              .faceB(data-pick="b")
+              .faceX(data-pick="x")
+                i.fa.fa-anchor
+              .faceO(data-pick="o")
+                i.fa.fa-life-ring
+          .hollow
+            .block(data-position='1')
+              .faceB(data-pick="b")
+              .faceX(data-pick="x")
+                i.fa.fa-anchor
+              .faceO(data-pick="o")
+                i.fa.fa-life-ring
+          .hollow
+            .block(data-position='2')
+              .faceB(data-pick="b")
+              .faceX(data-pick="x")
+                i.fa.fa-anchor
+              .faceO(data-position="o")
+                i.fa.fa-life-ring
+        .row
+          .hollow
+            .block(data-position='3')
+              .faceB(data-pick="b")
+              .faceX(data-pick="x")
+                i.fa.fa-anchor
+              .faceO(data-pick="o")
+                i.fa.fa-life-ring
+          .hollow
+            .block(data-position='4')
+              .faceB(data-pick="b")
+              .faceX(data-pick="x")
+                i.fa.fa-anchor
+              .faceO(data-pick="o")
+                i.fa.fa-life-ring
+          .hollow
+            .block(data-position='5')
+              .faceB(data-pick="b")
+              .faceX(data-pick="x")
+                i.fa.fa-anchor
+              .faceO(data-pick="o")
+                i.fa.fa-life-ring
+        .row
+          .hollow
+            .block(data-position='6')
+              .faceB(data-pick="b")
+              .faceX(data-pick="x")
+                i.fa.fa-anchor
+              .faceO(data-pick="o")
+                i.fa.fa-life-ring
+          .hollow
+            .block(data-position='7')
+              .faceB(data-pick="b")
+              .faceX(data-pick="x")
+                i.fa.fa-anchor
+              .faceO(data-pick="o")
+                i.fa.fa-life-ring
+          .hollow
+            .block(data-position='8')
+              .faceB(data-pick="b")
+              .faceX(data-pick="x")
+                i.fa.fa-anchor
+              .faceO(data-pick="o")
+                i.fa.fa-life-ring
+      .statementContainer            
+        .winnerStatement1
+          i.fa.fa-anchor 
+          h2 Wins!
+        .winnerStatement2
+          i.fa.fa-life-ring
+          h2 Wins!
+        .tieGameStatement
+          h2 Tie Game!
+        .invalidMove
+          h2 Invalid Move!
+      .footer
+        p
+          &copy; 2015 Ryan P Atkinson &trade;
