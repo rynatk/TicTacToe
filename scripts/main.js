@@ -35,7 +35,6 @@ $(document).ready(function () {
         for(j=0; j<gameBoard.length; j++) {
           if((winX[i][j])===gameBoard[j]) {
             checkWin += 1;
-            //console.log(checkWin);
           }
           if(checkWin > 2) {
             console.log('X WINS!');
@@ -51,7 +50,6 @@ $(document).ready(function () {
         for(j=0; j<gameBoard.length; j++) {
           if((winO[i][j])===gameBoard[j]) {
             checkWin += 1;
-            //console.log(checkWin);
           }
           if(checkWin > 2) {
             console.log('O WINS!');
