@@ -105,15 +105,15 @@ html {
   left: 600px;
   bottom: 500px; }
 
-.winnerStatement1, .winnerStatement2, .tieGameStatement {
+.winnerStatement1, .winnerStatement2, .tieGameStatement, .invalidMove {
   float: left;
   position: relative;
   color: lightgray; }
-  .winnerStatement1 h2, .winnerStatement2 h2, .tieGameStatement h2 {
+  .winnerStatement1 h2, .winnerStatement2 h2, .tieGameStatement h2, .invalidMove h2 {
     display: inline-block;
     font-size: 2em;
     margin: 10px 0px; }
-  .winnerStatement1 i, .winnerStatement2 i, .tieGameStatement i {
+  .winnerStatement1 i, .winnerStatement2 i, .tieGameStatement i, .invalidMove i {
     display: inline-block;
     font-size: 2em;
     padding-right: 10px; }
@@ -152,4 +152,7 @@ html {
   color: #8f0034; }
 
 .tieGameStatement.tielight {
-  color: #125b6e; }
+  color: #000; }
+
+.invalidMove.invalidlight {
+  color: #000; }

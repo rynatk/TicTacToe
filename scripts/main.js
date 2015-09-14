@@ -88,7 +88,11 @@ $(document).ready(function () {
           Oturn = false;
           console.log(gameBoard);
         }
-      } else {
+      } else if(gameBoard[$(this).data('position')] > 0) {
+        $('.invalidMove').addClass('invalidlight');
+        setTimeout(function() {
+          $('.invalidMove').removeClass('invalidlight');
+        }, 500);
       }
     }
   });
