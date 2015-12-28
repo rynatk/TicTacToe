@@ -1,6 +1,8 @@
+//Tic-Tac-Toe Game Logic
 //Coded by Ryan Atkinson
 
 $(document).ready(function () {
+
   var Xturn = true;
   var Oturn = false;
   var Xs = [];
@@ -8,32 +10,39 @@ $(document).ready(function () {
   var checkWin = 0;
   var killSwitch = false;
 
+  // Represents the current state of the Gameboard.
+  // "X" == 1; "O" == 2;
   var gameBoard = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-  var winX = [ [1, 1, 1, 3, 3, 3, 3, 3, 3],
-               [1, 3, 3, 1, 3, 3, 1, 3, 3],
-               [3, 3, 3, 3, 3, 3, 1, 1, 1],
-               [3, 3, 1, 3, 3, 1, 3, 3, 1],
-               [3, 1, 3, 3, 1, 3, 3, 1, 3],
-               [3, 3, 3, 1, 1, 1, 3, 3, 3],
-               [1, 3, 3, 3, 1, 3, 3, 3, 1],
-               [3, 3, 1, 3, 1, 3, 1, 3, 3], ];
+  // Array containing all conditions repsenting a win for player X.
+  // 3 used as a placeholder to ignore other board positions when comparing.
+  var xWinConditions = [ [1, 1, 1, 3, 3, 3, 3, 3, 3],
+                         [1, 3, 3, 1, 3, 3, 1, 3, 3],
+                         [3, 3, 3, 3, 3, 3, 1, 1, 1],
+                         [3, 3, 1, 3, 3, 1, 3, 3, 1],
+                         [3, 1, 3, 3, 1, 3, 3, 1, 3],
+                         [3, 3, 3, 1, 1, 1, 3, 3, 3],
+                         [1, 3, 3, 3, 1, 3, 3, 3, 1],
+                         [3, 3, 1, 3, 1, 3, 1, 3, 3], ];
 
-  var winO = [ [2, 2, 2, 3, 3, 3, 3, 3, 3],
-               [2, 3, 3, 2, 3, 3, 2, 3, 3],
-               [3, 3, 3, 3, 3, 3, 2, 2, 2],
-               [3, 3, 2, 3, 3, 2, 3, 3, 2],
-               [3, 2, 3, 3, 2, 3, 3, 2, 3],
-               [3, 3, 3, 2, 2, 2, 3, 3, 3],
-               [2, 3, 3, 3, 2, 3, 3, 3, 2],
-               [3, 3, 2, 3, 2, 3, 2, 3, 3], ];
+  // Array containing all conditions representing a win for player O.
+  // 3 used as a placeholder to ignore other board positions when comparing.
+  var oWinConditions = [ [2, 2, 2, 3, 3, 3, 3, 3, 3],
+                         [2, 3, 3, 2, 3, 3, 2, 3, 3],
+                         [3, 3, 3, 3, 3, 3, 2, 2, 2],
+                         [3, 3, 2, 3, 3, 2, 3, 3, 2],
+                         [3, 2, 3, 3, 2, 3, 3, 2, 3],
+                         [3, 3, 3, 2, 2, 2, 3, 3, 3],
+                         [2, 3, 3, 3, 2, 3, 3, 3, 2],
+                         [3, 3, 2, 3, 2, 3, 2, 3, 3], ];
 
+  // Function to read over the current state of the board between moves, and determine if there is a win condition.
   var winScan = function () {
     if(Xturn) {
-      for(i=0; i<winX.length; i++) {
+      for(i=0; i<xWinConditions.length; i++) {
         checkWin = 0;
         for(j=0; j<gameBoard.length; j++) {
-          if((winX[i][j])===gameBoard[j]) {
+          if((xWinConditions[i][j])===gameBoard[j]) {
             checkWin += 1;
           }
           if(checkWin > 2) {
@@ -45,10 +54,10 @@ $(document).ready(function () {
         }
       }
     } else if(Oturn) {
-      for(i=0; i<winO.length; i++) {
+      for(i=0; i<oWinConditions.length; i++) {
         checkWin = 0;
         for(j=0; j<gameBoard.length; j++) {
-          if((winO[i][j])===gameBoard[j]) {
+          if((oWinConditions[i][j])===gameBoard[j]) {
             checkWin += 1;
           }
           if(checkWin > 2) {
